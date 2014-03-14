@@ -103,15 +103,18 @@ public class MainActivity extends Activity {
 			}
 			break;
 		case R.id.action_search:
-			Intent settingsIntent = new Intent(
+			Intent bluetoothSettingsIntent = new Intent(
 					android.provider.Settings.ACTION_BLUETOOTH_SETTINGS);
-			startActivity(settingsIntent);
+			startActivity(bluetoothSettingsIntent);
 			break;
 		case R.id.action_clear:
 			new DbHelper(this).getWritableDatabase().delete(
 					ActionContract.TABLE, null, null);
 			historyAdapter.notifyDataSetChanged();
 			break;
+		case R.id.action_settings:
+			Intent settingsIntent = new Intent(this, SettingsActivity.class);
+			startActivity(settingsIntent);
 		}
 		return super.onOptionsItemSelected(item);
 	}

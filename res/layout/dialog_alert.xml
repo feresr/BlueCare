@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" 
+        android:paddingTop="5sp"
+        android:paddingRight="4sp"
+        android:paddingBottom="4sp">
+
+        <ImageView
+            android:id="@+id/device_icon"
+            android:layout_width="68sp"
+            android:layout_height="68sp"
+            android:contentDescription="@string/device_icon"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            
+           
+            android:paddingLeft="8dp"
+            android:paddingTop="4sp" >
+
+            <TextView
+                android:id="@+id/asd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_text"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/deviceNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nokia HS-26W"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/macAddressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:19:4F:AE:C3"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/OkBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14sp"
+        android:text="OK" >
+    </Button>
+
+</LinearLayout>

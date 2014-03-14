@@ -11,4 +11,5 @@
 	<string name="notification_title">Listening for bluetooth interactions#8230;</string>
 	<string name="device_icon">Icon</string>
 	<string name="action_clear">Clear</string>
+	<string name="dialog_text">Device disconnected</string>
 </resources>
