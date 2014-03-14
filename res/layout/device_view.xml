@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/paired_device_background"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        android:contentDescription="@string/device_icon"
+        android:src="@drawable/ic_launcher" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="8dp" >
+
+        <TextView
+            android:id="@+id/deviceNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Device Name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/macAddressTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03:29:F2:11:25"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="14sp"
+        android:layout_height="14sp"
+        android:layout_gravity="right|bottom"
+        android:src="@drawable/ic_clock" />
+
+    <TextView
+        android:id="@+id/created_atTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_weight="1"
+        android:gravity="right|bottom"
+        android:text="12 minutes ago sdsdsd"
+        android:textColor="#000"  />
+
+</LinearLayout>
