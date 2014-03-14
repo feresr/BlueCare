@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
 	  private Runnable onEverySecond = new Runnable() {
 	        public void run() {
 	           historyAdapter.notifyDataSetChanged();
-	            mHandler.postDelayed(onEverySecond, DateUtils.SECOND_IN_MILLIS * 10);
+	            mHandler.postDelayed(onEverySecond, DateUtils.MINUTE_IN_MILLIS);
 	        }
 	    };
 	

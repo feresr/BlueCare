@@ -4,10 +4,14 @@ import java.util.List;
 
 import database.DbHelper;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DevicesAdapter extends BaseAdapter {
@@ -49,6 +53,7 @@ public class DevicesAdapter extends BaseAdapter {
 		TextView txtDeviceName;
 		TextView txtDeviceMac;
 		TextView txtCreatedAt;
+		ImageView deviceIcon;
 		View v = convertView;
 		if (v == null) {
 			inflater = (LayoutInflater) context
@@ -60,8 +65,13 @@ public class DevicesAdapter extends BaseAdapter {
 		txtDeviceName = (TextView) v.findViewById(R.id.deviceNameTxt);
 		txtDeviceMac = (TextView) v.findViewById(R.id.macAddressTxt);
 		txtCreatedAt = (TextView) v.findViewById(R.id.created_atTxt);
-		
-	
+		deviceIcon = (ImageView) v.findViewById(R.id.device_icon);
+		Log.e("SADJKAS",interactions.get(position).getAction().toString());
+		if(!interactions.get(position).getAction()){
+			deviceIcon.setImageResource(R.drawable.ic_action_cancel);
+		}else{
+			deviceIcon.setImageResource(R.drawable.ic_launcher);
+		}
 		txtDeviceName.setText(interactions.get(position).getName());
 		txtDeviceMac.setText(interactions.get(position).getAdress());
 		txtCreatedAt.setText(interactions.get(position).getDate(this.context));

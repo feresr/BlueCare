@@ -32,7 +32,7 @@ public class DbHelper extends SQLiteOpenHelper { //
 						ActionContract.Column.ACTION,
 						ActionContract.Column.CREATED_AT);
 		//
-		Log.d(TAG, "onCreate with SQL: " + sql);
+		
 		db.execSQL(sql); //
 	}
 
@@ -51,7 +51,7 @@ public class DbHelper extends SQLiteOpenHelper { //
 		// Inserting Row
 		db.insert(ActionContract.TABLE, null, values);
 		db.close(); // Closing database connection
-		Log.i(TAG, device.getAddress() + " Device added to the DB");
+		
 	}
 
 	public void registerDisconnection(BluetoothDevice device) {
@@ -74,7 +74,7 @@ public class DbHelper extends SQLiteOpenHelper { //
 	public List<Interaction> getAllInteractions() {
 		List<Interaction> ineractionsList = new ArrayList<Interaction>();
 		// Select All Query
-		String selectQuery = "SELECT  * FROM " + ActionContract.TABLE;
+		String selectQuery = "SELECT  * FROM " + ActionContract.TABLE + " ORDER BY " + ActionContract.DEFAULT_SORT;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(selectQuery, null);
@@ -85,8 +85,8 @@ public class DbHelper extends SQLiteOpenHelper { //
 				Interaction interaction = new Interaction();
 				interaction.setName(cursor.getString(1));
 				interaction.setAdress(cursor.getString(2));
-				interaction
-						.setAction(Boolean.parseBoolean(cursor.getString(3)));
+				
+				interaction.setAction(cursor.getInt(3) == 1);
 				interaction.setDate(cursor.getLong(4));
 				// Adding contact to list
 				ineractionsList.add(interaction);
@@ -113,7 +113,7 @@ public class DbHelper extends SQLiteOpenHelper { //
 			Log.e(TAG, cursor.toString());
 		}
 		Interaction interaction = new Interaction(cursor.getString(0),
-				cursor.getString(1), Boolean.parseBoolean(cursor.getString(2)),
+				cursor.getString(1), cursor.getInt(2) == 1,
 				cursor.getInt(3));
 
 		return interaction;

@@ -39,7 +39,6 @@ public class Interaction {
 	}
 
 	public String getDate(Context context) {
-		Log.e("INTERACTION",String.valueOf(this.created_at));
 		String string = (String) DateUtils.getRelativeDateTimeString(context,created_at, DateUtils.SECOND_IN_MILLIS,DateUtils.HOUR_IN_MILLIS,0);
 		return string;
 	}
@@ -53,7 +52,6 @@ public class Interaction {
 	}
 
 	public Interaction( String name, String address, Boolean action, long created_at) {
-		Log.e("ESTE",String.valueOf(created_at));
 		this.name = name;
 		this.adress = address;
 		this.action = action;

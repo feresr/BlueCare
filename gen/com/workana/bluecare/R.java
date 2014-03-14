@@ -28,18 +28,17 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_clear=0x7f08000b;
-        public static final int action_search=0x7f08000a;
-        public static final int action_settings=0x7f080008;
-        public static final int action_turnOnOff_bluetooth=0x7f080009;
-        public static final int created_atTxt=0x7f080007;
-        public static final int deviceNameTxt=0x7f080005;
-        public static final int history_listview=0x7f080002;
-        public static final int imageView1=0x7f080004;
-        public static final int macAddressTxt=0x7f080006;
-        public static final int paired_device_background=0x7f080003;
+        public static final int action_clear=0x7f08000a;
+        public static final int action_search=0x7f080009;
+        public static final int action_settings=0x7f080007;
+        public static final int action_turnOnOff_bluetooth=0x7f080008;
+        public static final int created_atTxt=0x7f080006;
+        public static final int deviceNameTxt=0x7f080004;
+        public static final int device_icon=0x7f080003;
+        public static final int history_listview=0x7f080001;
+        public static final int macAddressTxt=0x7f080005;
+        public static final int paired_device_background=0x7f080002;
         public static final int statusbar=0x7f080000;
-        public static final int textView1=0x7f080001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
