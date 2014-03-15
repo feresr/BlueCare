@@ -58,6 +58,8 @@ public class MainActivity extends Activity {
 		historyListView = (ListView) findViewById(R.id.history_listview);
 		historyAdapter = new DevicesAdapter(this.getApplicationContext());
 		historyListView.setAdapter(historyAdapter);
+		TextView emptyText = (TextView)findViewById(android.R.id.empty);
+		historyListView.setEmptyView(emptyText);
 		mHandler.post(onEverySecond);
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(BluetoothReceiver.TAG);
@@ -126,21 +128,22 @@ public class MainActivity extends Activity {
 	public void updateStatusBar(int state) {
 		switch (state) {
 		case BluetoothAdapter.STATE_ON:
-			statusBar.setText("BLUETOOTH ENABLED");
+			
+			statusBar.setText(getString(R.string.BLUETOOTH_ENABLED));
 			statusBar.setBackgroundColor(Color.parseColor("#99CC00"));
 
 			break;
 		case BluetoothAdapter.STATE_OFF:
-			statusBar.setText("BLUETOOTH DISABLED");
+			statusBar.setText(R.string.BLUETOOTH_DISABLED);
 			statusBar.setBackgroundColor(Color.parseColor("#FF4444"));
 			break;
 		case BluetoothAdapter.STATE_TURNING_ON:
-			statusBar.setText("TURNING ON");
+			statusBar.setText(R.string.TURNING_ON);
 			statusBar.setBackgroundColor(Color.parseColor("#FFBB33"));
 			break;
 		case BluetoothAdapter.STATE_TURNING_OFF:
 
-			this.statusBar.setText("TURNING OFF");
+			this.statusBar.setText(R.string.TURNING_OFF);
 			this.statusBar.setBackgroundColor(Color.parseColor("#FFBB33"));
 
 			break;

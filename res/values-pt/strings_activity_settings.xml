@@ -25,8 +25,8 @@
     </string-array>
 
     <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Automatic execution</string>
-    <string name="automatic_execution_toggle">Start application after reboot</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="pref_title_sync_frequency">Sync frequency</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>15 minutes</item>
@@ -48,11 +48,11 @@
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
     <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-    <string name="pref_title_new_message_notifications">Notify me when a connection is lost</string>
-    <string name="pref_title_ringtone">Alarm</string>
-    <string name="pref_ringtone_silent">Silent</string>
-    <string name="pref_title_vibrate">Vibrate</string>
-	<string name="pref_title_light">Light</string>
-	<string name="pref_title_dialog">Dialog</string>
+    <string name="pref_header_notifications">Notificaciones</string>
+    <string name="pref_title_new_message_notifications">Notificarme cuando se pierde una conexión</string>
+    <string name="pref_title_ringtone">Alarma</string>
+    <string name="pref_ringtone_silent">Silencio</string>
+    <string name="pref_title_vibrate">Vibrar</string>
+	<string name="pref_title_light">Luz</string>
+	<string name="pref_title_dialog">Cuadro de dialogo</string>
 </resources>

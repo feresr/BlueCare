@@ -25,6 +25,7 @@ public class DevicesAdapter extends BaseAdapter {
 		this.context = context;
 		dbHelper = new DbHelper(context);
 		interactions = dbHelper.getAllInteractions();
+		
 	}
 
 	@Override
@@ -32,6 +33,8 @@ public class DevicesAdapter extends BaseAdapter {
 		return dbHelper.getAllInteractions().size();
 	}
 
+
+	
 	@Override
 	public Object getItem(int position) {
 		return interactions.get(position);
@@ -68,9 +71,9 @@ public class DevicesAdapter extends BaseAdapter {
 		deviceIcon = (ImageView) v.findViewById(R.id.device_icon);
 		Log.e("SADJKAS",interactions.get(position).getAction().toString());
 		if(!interactions.get(position).getAction()){
-			deviceIcon.setImageResource(R.drawable.ic_action_cancel);
+			deviceIcon.setImageResource(R.drawable.ic_disconnection);
 		}else{
-			deviceIcon.setImageResource(R.drawable.ic_launcher);
+			deviceIcon.setImageResource(R.drawable.ic_connection);
 		}
 		txtDeviceName.setText(interactions.get(position).getName());
 		txtDeviceMac.setText(interactions.get(position).getAdress());

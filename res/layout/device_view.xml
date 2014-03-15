@@ -16,35 +16,33 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center_vertical"
-        android:paddingTop="4sp"
-        android:paddingBottom="4sp"
         android:orientation="vertical"
-        android:paddingLeft="8dp" >
+        android:paddingBottom="4sp"
+        android:paddingLeft="8dp"
+        android:paddingTop="4sp" >
 
         <TextView
             android:id="@+id/deviceNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-          
             android:text="Nokia HS-26W"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/macAddressTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="12sp"
             android:text="00:19:4F:AE:C3"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="right|bottom"
-       
             android:orientation="horizontal" >
 
             <ImageView
@@ -58,15 +56,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|bottom"
-                android:textSize="12sp"
                 android:gravity="right|bottom"
                 android:paddingLeft="3sp"
                 android:paddingRight="2sp"
-               
                 android:text="12 minutes ago, 10:25am"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="12sp" />
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

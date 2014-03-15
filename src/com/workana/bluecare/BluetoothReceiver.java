@@ -38,6 +38,10 @@ public class BluetoothReceiver extends BroadcastReceiver {
 			dbHelper.registerDisconnection(device);
 			showNotification(context, device);
 		}
+		if(action.equals(Intent.ACTION_BOOT_COMPLETED)){
+			
+			Log.e("PRENDII :d"," YEAH");
+		}
 
 		Intent notifyChangesOnDb = new Intent(TAG);
 		context.sendBroadcast(notifyChangesOnDb);
@@ -77,29 +81,32 @@ public class BluetoothReceiver extends BroadcastReceiver {
 		if (sharedPref.getBoolean("notifications_new_message", false)) {
 			Uri alarmSound = Uri.parse(sharedPref.getString(
 					"notifications_new_message_ringtone", ""));
+
 			mBuilder.setSound(alarmSound);
 
 			if (sharedPref.getBoolean("notifications_new_message_vibrate",
 					false)) {
-				mBuilder.setVibrate(new long[] { 5000 });
-				mBuilder.setLights(Color.RED, 3000, 3000);
+
+				mBuilder.setVibrate(new long[] { 1000,2000});
+
 			}
+
 			if (sharedPref.getBoolean("notifications_new_message_light", false)) {
 				mBuilder.setLights(Color.RED, 500, 200);
 			}
-			
-			if(sharedPref.getBoolean("notifications_new_message_dialog", false)){
+
+			if (sharedPref
+					.getBoolean("notifications_new_message_dialog", false)) {
 				Intent i = new Intent(context, AlertDialog.class);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				context.startActivity(i);
-				
+
 			}
-			
+
 		}
-		
-	
-		
+
 		mNotificationManager.notify(++notificationId, mBuilder.build());
+	
 	}
 
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Blue Care</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="statusbar_text">EL DISPOSITIVO NO SOPORTA BLUETOOTH</string>
+    <string name="action_visibility">Toggle bluetooth</string>
+    <string name="action_search">Buscar dispositivos</string>
+    <string name="device_icon">Icono</string>
+    <string name="action_clear">Limpiar</string>
+    <string name="dialog_text">Dispositivo desconectado</string>
+    <string name="BLUETOOTH_ENABLED">BLUETOOTH ACTIVADO</string>
+    <string name="BLUETOOTH_DISABLED">BLUETOOTH DESACTIVADO</string>
+    <string name="TURNING_ON">ACTIVANDO&#8230;</string>
+    <string name="TURNING_OFF">DESACTIVANDO&#8230;</string>
+
+</resources>

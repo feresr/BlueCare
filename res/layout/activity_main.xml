@@ -12,13 +12,20 @@
         android:text="@string/statusbar_text"
         android:textSize="12sp" />
 
-
-    
-
     <ListView
         android:id="@+id/history_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
+
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/empty_listView" />
 
 </LinearLayout>

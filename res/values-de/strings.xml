@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Blue Care</string>
+    <string name="action_settings">Configurations</string>
+    <string name="statusbar_text">DISPOSITIF BLUETOOTH PAS SOUTENU</string>
+    <string name="action_visibility">Couper et Bluetooth</string>
+    <string name="action_search">Rechercher des périphériques</string>
+    <string name="device_icon">Icono</string>
+    <string name="action_clear">Clair</string>
+    <string name="dialog_text">Dispositif déconnecté</string>
+    <string name="BLUETOOTH_ENABLED">BLUETOOTH ENCENDIDO</string>
+    <string name="BLUETOOTH_DISABLED">BLUETOOTH DE RÉDUCTION</string>
+    <string name="TURNING_ON">ACTIVATION&#8230;</string>
+    <string name="TURNING_OFF">JE S\'INTERROMPIT&#8230;</string>
+
+</resources>
