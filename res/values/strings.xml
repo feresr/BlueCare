@@ -11,8 +11,8 @@
 	<string name="dialog_text">Device disconnected</string>
 	<string name="BLUETOOTH_ENABLED">BLUETOOTH ENABLED</string>
 	<string name="BLUETOOTH_DISABLED">BLUETOOTH DISABLED</string>
-	<string name="TURNING_ON">TURNING ON&#8230;</string>
-	<string name="TURNING_OFF">TURNING OFF&#8230;</string>
+	<string name="TURNING_ON">TURNING_ON&#8230;</string>
+	<string name="TURNING_OFF">TURNING_OFF&#8230;</string>
 	<string name="empty_listView">No interactions to show.
-	     Click on the magnifying glass icon to establish a connection.</string>
+	     Tap on the magnifying glas icon to establish a connection.</string>
 </resources>

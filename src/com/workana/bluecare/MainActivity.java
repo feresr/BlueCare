@@ -5,6 +5,7 @@ import database.DbHelper;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -68,6 +69,10 @@ public class MainActivity extends Activity {
 		// 2. Does the device support BT at all?
 		if (mBluetoothAdapter != null) {
 			// 3. It does, great. Is it on?
+			NotificationManager mNotificationManager = (NotificationManager) this
+					.getSystemService(Context.NOTIFICATION_SERVICE);
+			mNotificationManager.cancelAll();
+			
 			if (!mBluetoothAdapter.isEnabled()) {
 				// 4. It's not, ask the user for permission to turn it on.
 				updateStatusBar(BluetoothAdapter.STATE_OFF);
@@ -107,7 +112,9 @@ public class MainActivity extends Activity {
 		case R.id.action_search:
 			Intent bluetoothSettingsIntent = new Intent(
 					android.provider.Settings.ACTION_BLUETOOTH_SETTINGS);
-			startActivity(bluetoothSettingsIntent);
+			if(mBluetoothAdapter != null){
+			startActivity(bluetoothSettingsIntent);}
+			
 			break;
 		case R.id.action_clear:
 			new DbHelper(this).getWritableDatabase().delete(

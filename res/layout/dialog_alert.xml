@@ -9,7 +9,7 @@
         android:layout_height="fill_parent"
         android:orientation="horizontal" 
         android:paddingTop="5sp"
-        android:paddingRight="4sp"
+        android:paddingRight="8sp"
         android:paddingBottom="4sp">
 
         <ImageView

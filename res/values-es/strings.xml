@@ -13,5 +13,6 @@
     <string name="BLUETOOTH_DISABLED">BLUETOOTH DESACTIVADO</string>
     <string name="TURNING_ON">ACTIVANDO&#8230;</string>
     <string name="TURNING_OFF">DESACTIVANDO&#8230;</string>
-
+    <string name="empty_listView">Ninguna interacción para mostrar. 
+        Seleccione el ícono en forma de lupa para establecer una conexión.</string>
 </resources>

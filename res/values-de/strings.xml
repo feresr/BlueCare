@@ -13,5 +13,7 @@
     <string name="BLUETOOTH_DISABLED">BLUETOOTH DE RÉDUCTION</string>
     <string name="TURNING_ON">ACTIVATION&#8230;</string>
     <string name="TURNING_OFF">JE S\'INTERROMPIT&#8230;</string>
+    <string name="empty_listView">Aucune interaction pour montrer. 
+Appuyez sur l\'icône en forme de loupe pour établir une connexion.</string>
 
 </resources>

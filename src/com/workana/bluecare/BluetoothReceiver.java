@@ -103,9 +103,11 @@ public class BluetoothReceiver extends BroadcastReceiver {
 
 			}
 
+			mNotificationManager.notify(++notificationId, mBuilder.build());
+			
 		}
 
-		mNotificationManager.notify(++notificationId, mBuilder.build());
+		
 	
 	}
 
