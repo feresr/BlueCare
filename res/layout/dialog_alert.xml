@@ -63,7 +63,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14sp"
-        android:text="OK" >
+        android:text="OK" 
+        style="@android:style/ButtonBar"
+        >
     </Button>
 
 </LinearLayout>

@@ -4,9 +4,6 @@ import java.util.List;
 
 import database.DbHelper;
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +66,6 @@ public class DevicesAdapter extends BaseAdapter {
 		txtDeviceMac = (TextView) v.findViewById(R.id.macAddressTxt);
 		txtCreatedAt = (TextView) v.findViewById(R.id.created_atTxt);
 		deviceIcon = (ImageView) v.findViewById(R.id.device_icon);
-		Log.e("SADJKAS",interactions.get(position).getAction().toString());
 		if(!interactions.get(position).getAction()){
 			deviceIcon.setImageResource(R.drawable.ic_disconnection);
 		}else{

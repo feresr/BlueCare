@@ -11,11 +11,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.text.format.DateUtils;
-import android.util.Log;
 
-public class DbHelper extends SQLiteOpenHelper { //
-	private static final String TAG = DbHelper.class.getSimpleName();
+public class DbHelper extends SQLiteOpenHelper { 
 
 	public DbHelper(Context context) {
 		super(context, ActionContract.DB_NAME, null, ActionContract.DB_VERSION);
@@ -68,7 +65,7 @@ public class DbHelper extends SQLiteOpenHelper { //
 		// Inserting Row
 		db.insert(ActionContract.TABLE, null, values);
 		db.close(); // Closing database connection
-		Log.e(TAG, device.getAddress() + " Device added to the DB");
+		
 	}
 
 	public List<Interaction> getAllInteractions() {
@@ -110,7 +107,6 @@ public class DbHelper extends SQLiteOpenHelper { //
 
 		if (cursor != null && cursor.getCount() > 0) {
 			cursor.moveToFirst();
-			Log.e(TAG, cursor.toString());
 		}
 		Interaction interaction = new Interaction(cursor.getString(0),
 				cursor.getString(1), cursor.getInt(2) == 1,

@@ -7,6 +7,7 @@
     <string name="action_visibility">Toggle bluetooth</string>
     <string name="action_search">Buscar dispositivos</string>
     <string name="device_icon">Icono</string>
+    <string name="ok">OK</string>
     <string name="action_clear">Limpiar</string>
     <string name="dialog_text">Dispositivo desconectado</string>
     <string name="BLUETOOTH_ENABLED">BLUETOOTH ACTIVADO</string>

@@ -6,13 +6,17 @@
     <string name="statusbar_text">BLUETOOTH NOT SUPPORTED ON DEVICE</string>
     <string name="action_visibility">Toggle bluetooth</string>
     <string name="action_search">Search devices</string>
-	<string name="device_icon">Icon</string>
-	<string name="action_clear">Clear</string>
-	<string name="dialog_text">Device disconnected</string>
-	<string name="BLUETOOTH_ENABLED">BLUETOOTH ENABLED</string>
-	<string name="BLUETOOTH_DISABLED">BLUETOOTH DISABLED</string>
-	<string name="TURNING_ON">TURNING_ON&#8230;</string>
-	<string name="TURNING_OFF">TURNING_OFF&#8230;</string>
-	<string name="empty_listView">No interactions to show.
-	     Tap on the magnifying glas icon to establish a connection.</string>
+    <string name="device_icon">Icon</string>
+    <string name="action_clear">Clear</string>
+    <string name="ok">OK</string>
+    <string name="dialog_text">Device disconnected</string>
+    <string name="BLUETOOTH_ENABLED">BLUETOOTH ENABLED</string>
+    <string name="BLUETOOTH_DISABLED">BLUETOOTH DISABLED</string>
+    <string name="TURNING_ON">TURNING ON&#8230;</string>
+    <string name="TURNING_OFF">TURNING OFF&#8230;</string>
+    <string name="empty_listView">No interactions to show.
+	     Tap on the magnifying glass icon to establish a connection.</string>
+    <string name="back_key">Don\'t forget to press the back key after you establish a connection.</string>
+    <string name="bt_not_supported">Bluetooth not\'t not supported on device.</string>
+	
 </resources>

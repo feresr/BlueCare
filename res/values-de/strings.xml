@@ -8,6 +8,7 @@
     <string name="action_search">Rechercher des périphériques</string>
     <string name="device_icon">Icono</string>
     <string name="action_clear">Clair</string>
+    <string name="ok">OK</string>
     <string name="dialog_text">Dispositif déconnecté</string>
     <string name="BLUETOOTH_ENABLED">BLUETOOTH ENCENDIDO</string>
     <string name="BLUETOOTH_DISABLED">BLUETOOTH DE RÉDUCTION</string>

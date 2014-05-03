@@ -13,11 +13,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.text.format.DateUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 	private Handler mHandler = new Handler();
 	private DevicesAdapter historyAdapter;
 	private TextView statusBar;
-	private Intent i;
+	private NotificationManager mNotificationManager;
 	private BroadcastReceiver mReciever = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -44,13 +44,12 @@ public class MainActivity extends Activity {
 			}
 		}
 	};
-	private String TAG = this.getClass().getSimpleName();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Log.i(TAG, "onCreate");
+		
 		// 1. Set the views and get the adapter.
 		registerReceiver(mReciever, new IntentFilter(
 				BluetoothAdapter.ACTION_STATE_CHANGED));
@@ -59,7 +58,7 @@ public class MainActivity extends Activity {
 		historyListView = (ListView) findViewById(R.id.history_listview);
 		historyAdapter = new DevicesAdapter(this.getApplicationContext());
 		historyListView.setAdapter(historyAdapter);
-		TextView emptyText = (TextView)findViewById(android.R.id.empty);
+		TextView emptyText = (TextView) findViewById(android.R.id.empty);
 		historyListView.setEmptyView(emptyText);
 		mHandler.post(onEverySecond);
 		IntentFilter filter = new IntentFilter();
@@ -72,7 +71,7 @@ public class MainActivity extends Activity {
 			NotificationManager mNotificationManager = (NotificationManager) this
 					.getSystemService(Context.NOTIFICATION_SERVICE);
 			mNotificationManager.cancelAll();
-			
+
 			if (!mBluetoothAdapter.isEnabled()) {
 				// 4. It's not, ask the user for permission to turn it on.
 				updateStatusBar(BluetoothAdapter.STATE_OFF);
@@ -112,9 +111,14 @@ public class MainActivity extends Activity {
 		case R.id.action_search:
 			Intent bluetoothSettingsIntent = new Intent(
 					android.provider.Settings.ACTION_BLUETOOTH_SETTINGS);
-			if(mBluetoothAdapter != null){
-			startActivity(bluetoothSettingsIntent);}
-			
+			if (mBluetoothAdapter != null) {
+				startActivity(bluetoothSettingsIntent);
+			}
+
+			Toast toast = Toast.makeText(this, getString(R.string.back_key),
+					Toast.LENGTH_LONG);
+			toast.show();
+
 			break;
 		case R.id.action_clear:
 			new DbHelper(this).getWritableDatabase().delete(
@@ -129,13 +133,15 @@ public class MainActivity extends Activity {
 	}
 
 	private void showNoBTSupportedDialog() {
-		// 2.1 Show 'No BT supported' message.
+		Toast toast = Toast.makeText(this,
+				getString(R.string.bt_not_supported), Toast.LENGTH_LONG);
+		toast.show();
 	}
 
 	public void updateStatusBar(int state) {
 		switch (state) {
 		case BluetoothAdapter.STATE_ON:
-			
+
 			statusBar.setText(getString(R.string.BLUETOOTH_ENABLED));
 			statusBar.setBackgroundColor(Color.parseColor("#99CC00"));
 
@@ -158,17 +164,26 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
+	protected void onResume() {
+		//When the user enters the app, all notifications are cleared from the notification drawer.
+		mNotificationManager = (NotificationManager) this
+				.getSystemService(Context.NOTIFICATION_SERVICE);
+		mNotificationManager.cancelAll();
+		super.onResume();
+	}
+	
+	
+	@Override
 	protected void onDestroy() {
 		unregisterReceiver(mReciever);
 		super.onDestroy();
 	}
-	
-	
-	  private Runnable onEverySecond = new Runnable() {
-	        public void run() {
-	           historyAdapter.notifyDataSetChanged();
-	            mHandler.postDelayed(onEverySecond, DateUtils.MINUTE_IN_MILLIS);
-	        }
-	    };
-	
+
+	private Runnable onEverySecond = new Runnable() {
+		public void run() {
+			historyAdapter.notifyDataSetChanged();
+			mHandler.postDelayed(onEverySecond, DateUtils.MINUTE_IN_MILLIS);
+		}
+	};
+
 }

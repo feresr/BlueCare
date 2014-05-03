@@ -1,4 +1,22 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <ListPreference
+        android:defaultValue="2000"
+        
+        android:entries="@array/pref_mode_names"
+        android:entryValues="@array/pref_mode_values"
+        android:key="prefMode"
+        android:summary="@string/pref_mode_summary"
+        android:title="@string/pref_sync_frequency" />
+
+        <EditTextPreference
+            android:defaultValue="15"
+            android:key="customDelayPreference"
+            android:inputType="number"
+            android:dialogMessage="Set delay before alarms triggers (sec)"
+            android:dialogTitle="Custom delay"
+            android:title="Custom delay" />
+     
+
 
 </PreferenceScreen>

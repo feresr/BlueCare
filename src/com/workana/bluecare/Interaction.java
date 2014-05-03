@@ -5,7 +5,6 @@ package com.workana.bluecare;
 
 import android.content.Context;
 import android.text.format.DateUtils;
-import android.util.Log;
 
 public class Interaction {
 
@@ -39,6 +38,7 @@ public class Interaction {
 	}
 
 	public String getDate(Context context) {
+		
 		String string = (String) DateUtils.getRelativeDateTimeString(context,created_at, DateUtils.SECOND_IN_MILLIS,DateUtils.HOUR_IN_MILLIS,0);
 		return string;
 	}
